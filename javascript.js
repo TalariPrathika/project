@@ -4,7 +4,7 @@ let studentData = {};
 
 function handleContinue() {
   const studentId = document.getElementById('studentId').value.trim();
-  const email     = document.getElementById('email').value.trim();
+  const email = document.getElementById('email').value.trim();
   let valid = true;
 
   document.getElementById('studentIdError').textContent = '';
@@ -14,6 +14,7 @@ function handleContinue() {
     document.getElementById('studentIdError').textContent = 'Student ID is required.';
     valid = false;
   }
+
   if (!email) {
     document.getElementById('emailError').textContent = 'Email is required.';
     valid = false;
@@ -25,8 +26,10 @@ function handleContinue() {
   if (!valid) return;
 
   studentData = { studentId, email };
+
   document.getElementById('studentBadge').textContent =
-    👤 ${studentId}   |   ✉️ ${email};
+    'Student: ' + studentId + '   |   Email: ' + email;
+
   document.getElementById('step1').classList.add('hidden');
   document.getElementById('step2').classList.remove('hidden');
 }
@@ -38,7 +41,7 @@ function goBack() {
 
 async function handleSubmit() {
   const category = document.getElementById('category').value;
-  const message  = document.getElementById('message').value.trim();
+  const message = document.getElementById('message').value.trim();
   let valid = true;
 
   document.getElementById('categoryError').textContent = '';
@@ -48,6 +51,7 @@ async function handleSubmit() {
     document.getElementById('categoryError').textContent = 'Please select a category.';
     valid = false;
   }
+
   if (!message) {
     document.getElementById('messageError').textContent = 'Complaint details are required.';
     valid = false;
@@ -59,6 +63,7 @@ async function handleSubmit() {
   if (!valid) return;
 
   const complaintId = 'RKV-' + Date.now();
+
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Submitting...';
@@ -72,10 +77,10 @@ async function handleSubmit() {
       },
       body: JSON.stringify({
         complaint_id: complaintId,
-        student_id:   studentData.studentId,
-        email:        studentData.email,
-        category:     category,
-        message:      message
+        student_id: studentData.studentId,
+        email: studentData.email,
+        category: category,
+        message: message
       })
     });
 
@@ -88,6 +93,7 @@ async function handleSubmit() {
     } else {
       alert('Error: ' + (result.error || 'Something went wrong.'));
     }
+
   } catch (err) {
     alert('Network error. Check your connection.');
   } finally {
