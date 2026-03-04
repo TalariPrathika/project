@@ -1,0 +1,126 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container { width: 100%; max-width: 520px; }
+
+.header { text-align: center; margin-bottom: 24px; color: white; }
+.header h1 { font-size: 2rem; font-weight: 700; }
+.header h2 { font-size: 1.1rem; font-weight: 400; color: #a0c4ff; margin: 4px 0 8px; }
+.header p  { font-size: 0.85rem; color: #8899aa; }
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-group { margin-bottom: 20px; }
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fafafa;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0f3460;
+  background: white;
+}
+
+textarea { resize: vertical; min-height: 120px; }
+
+button {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #0f3460, #533483);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+
+button:hover    { opacity: 0.9; transform: translateY(-1px); }
+button:active   { transform: translateY(0); }
+button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #555;
+  margin-top: 10px;
+}
+.btn-secondary:hover { background: #e0e0e0; opacity: 1; }
+
+.error {
+  display: block;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.student-badge {
+  background: #eef4ff;
+  border: 1px solid #c0d8ff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: #0f3460;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.success-card { text-align: center; }
+.success-icon { font-size: 3.5rem; margin-bottom: 12px; }
+.success-card h3 { border: none; font-size: 1.4rem; color: #27ae60; }
+.success-card p  { color: #555; margin: 8px 0; }
+
+.complaint-id-box {
+  background: #f0fff4;
+  border: 2px dashed #27ae60;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 20px 0;
+}
+.complaint-id-box span   { display: block; font-size: 0.85rem; color: #777; margin-bottom: 6px; }
+.complaint-id-box strong { font-size: 1.3rem; color: #0f3460; letter-spacing: 1px; }
+
+.note { font-size: 0.82rem !important; color: #999 !important; }
+
+.hidden { display: none; }

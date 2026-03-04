@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RGUKT RKV - Student Complaint Box</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>🎓 RGUKT RKV</h1>
+      <h2>Student Complaint Box</h2>
+      <p>Submit your complaints securely and confidentially</p>
+    </div>
+
+    <!-- STEP 1: Student Info -->
+    <div id="step1" class="card">
+      <h3>Step 1: Enter Your Details</h3>
+
+      <div class="form-group">
+        <label for="studentId">Student ID *</label>
+        <input type="text" id="studentId" placeholder="e.g. S220410" maxlength="20" />
+        <span class="error" id="studentIdError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="e.g. student@rguktrkv.ac.in" />
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <button onclick="handleContinue()">Continue →</button>
+    </div>
+
+    <!-- STEP 2: Complaint Form -->
+    <div id="step2" class="card hidden">
+      <h3>Step 2: Submit Your Complaint</h3>
+
+      <div class="student-badge" id="studentBadge"></div>
+
+      <div class="form-group">
+        <label for="category">Category *</label>
+        <select id="category">
+          <option value="">-- Select Category --</option>
+          <option value="Academic Issues">📚 Academic Issues</option>
+          <option value="Mess Issues">🍽️ Mess Issues</option>
+          <option value="Hospital Issues">🏥 Hospital Issues</option>
+          <option value="Non-Academic Issues">📋 Non-Academic Issues</option>
+          <option value="Girls Issues">👩 Girls Issues</option>
+          <option value="Hostel Issues">🏠 Hostel Issues</option>
+          <option value="Infrastructure Issues">🏗️ Infrastructure Issues</option>
+          <option value="Other Issues">❓ Other Issues</option>
+        </select>
+        <span class="error" id="categoryError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Complaint Details *</label>
+        <textarea id="message" rows="5"
+          placeholder="Describe your complaint clearly..."></textarea>
+        <span class="error" id="messageError"></span>
+      </div>
+
+      <button id="submitBtn" onclick="handleSubmit()">Submit Complaint</button>
+      <button class="btn-secondary" onclick="goBack()">← Go Back</button>
+    </div>
+
+    <!-- STEP 3: Success -->
+    <div id="step3" class="card hidden success-card">
+      <div class="success-icon">✅</div>
+      <h3>Complaint Submitted!</h3>
+      <p>Your complaint has been recorded successfully.</p>
+      <div class="complaint-id-box">
+        <span>Your Complaint ID:</span>
+        <strong id="displayComplaintId"></strong>
+      </div>
+      <p class="note">📌 Save this ID for future reference.</p>
+      <button onclick="submitAnother()">Submit Another Complaint</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
